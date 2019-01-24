@@ -1,0 +1,25 @@
+<div class="autocomplete-list animated fadeIn"
+  [ngClass]="{
+    'forced-choice': forcedChoice,
+    'default-style': listSize === 'default'
+  }">
+    <div *ngIf="isLoading" class="loader">
+      Loading ...
+    </div>
+    <ul *ngIf="!isLoading">
+      <li *ngFor="let item of itemList; let i = index;"
+        [ngClass]="{active: activeIndex === i}"
+        (click)="selectItem(item)">
+          <span>
+            {{
+               (!textTransform)
+               ? item[labelsField]
+               : (textTransform === 'uppercase') ? item[labelsField].toUpperCase() : item[labelsField].toLowerCase()
+            }}
+          </span>
+      </li>
+    </ul>
+    <div *ngIf="buttonName" class="button-wrapper">
+      <a [routerLink]="buttonRouterLink">{{ buttonName }}</a>
+    </div>
+</div>

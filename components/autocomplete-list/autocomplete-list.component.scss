@@ -1,0 +1,88 @@
+.autocomplete-list {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  color: #007CBB;
+  background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: .125rem;
+  box-shadow: 0 1px 0.125rem hsla(0,0%,45%,.25);
+
+  &.animated {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+  }
+
+  &.forced-choice {
+    li:first-child {
+      font-weight: 600;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+
+  li {
+    cursor: pointer;
+
+    &.active {
+      background-color: #eee;
+    }
+
+    &:hover {
+      background-color: #eee;
+      color: #565656;
+    }
+  }
+}
+
+.button-wrapper {
+  border-top: 1px solid #ccc;
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #007CBB;
+  }
+
+  a:visited {
+    color: #007CBB;
+  }
+}
+
+.default-style {
+  font-size: .54167rem;
+
+  .loader {
+    padding: 0 8px;
+    line-height: 2;
+  }
+
+  li {
+    padding: 3px 8px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .button-wrapper {
+    margin: 0 10px;
+    line-height: 2.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
